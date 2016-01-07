@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="main">
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<div  id="signin-slide">
+
+</div>
+<div class="nav" >
+<ul class="nav-items">
+  <li><a href="" onmouseover="ShowSubItems()" id="home">Home</a><div id="nav-sub-items" onmouseover="ShowSubItems()" onmouseout="HideSubItems(); Hideicon()"></span></li>
+  <li><a href="">Services</a></li>
+  <li><a href="">Contact</a></li>
+  <li></li>
+</ul> 
+<p id="signin" class="btn btn-info">SignIn</p>
+<p id="signup" class="btn btn-danger">SignUp</p>
+</div> 
+</div>
+<div class="left-panel">
+
+</div>
+<div class="content" id="content">
+</div>
+<style>
+#icon{
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 20px solid white;
+	position:absolute;
+	margin-left:40px;
+}
+</style>
+
+<div class ="news"></div>
+
+<div class ="others"></div>
+
+<div class="footer">
+</div>
+</div>
+<style>
+.nav
+{
+width:1160px;
+margin-left:160px;
+height:65px;
+background-color:red;
+}
+.left-panel
+{
+width:160px;
+height:510px;
+background-color:yellow;
+float:left;
+}
+.content
+{	
+width:820px;
+height:510px;
+background-color:blue;
+float:left;
+}
+
+.news
+{
+height:360px;
+background-color:black;
+}
+
+.others
+{
+height:150px;
+background:red;
+}
+.footer
+{
+height:70px;
+background-color:green;
+}
+
+.nav-items
+{
+list-style-type:none;
+position:absolute;
+top:10px;
+align:center;
+
+}
+
+.nav-items>li
+{
+display:inline;
+}
+.nav-items>li>a
+{
+display:inline-block;
+color:white;
+padding-right:25px;
+background-color:black;
+font-size:35px;
+}
+
+.nav-items>li>a:hover
+{
+color:blue;
+}
+#nav-sub-items
+{
+border-radius:7px;
+height:230px;
+visibility:hidden;
+width:480px; 
+background-color:white;
+position:absolute;
+margin-top:20.1px;
+}
+
+#signin-slide
+{
+width:0px;
+height:0px;
+background-color:black;
+position:absolute;
+float:left;
+}
+
+#signin, #signup
+{
+float:right;
+padding-top:5px;
+margin-top:15px;
+margin-right:12px;
+padding-right:17px;
+}
+</style>
+
+<script>
+function ShowSubItems()	
+{
+var icon=$('<div id="icon"></div>');
+$("#nav-sub-items").before(icon);
+document.getElementById("nav-sub-items").style.visibility="visible";
+}
+function HideSubItems()	
+{
+$("#icon").remove();
+document.getElementById("nav-sub-items").style.visibility="Hidden";
+}
+function Hideicon()	
+{
+$("#icon").remove();
+}
+
+$(document).ready(function(){
+
+var homestatus="";
+var form=$('<br><br><br><br><br><br><br><br><br><form id="signin-form"> <p style="color:white;">First name:</p><input type="text" name="firstname" id="fname"><br><p style="color:white;">Last name:</p> <input type="text" name="lastname" id="lname"></form>');
+var submit=$('<br><br><input type="submit" value="Submit" style="margin-left:47px;">');
+
+    $("#signin").click(function(){
+			
+	
+		$("#signin-slide").css({"width":"190px", "height":"550px", "-webkit-transition": "all 0.5s ease-out"});
+
+		$("#signin-slide").append(form);
+		submit.appendTo($("#signin-form"));
+       $("#home").css({"visibility":"hidden"});
+	  homestatus=$("#home").css("visibility");
+	  
+	   if(homestatus=="hidden")
+	   {
+	   $('#content').click(function()
+	{
+	$("#home").css({"visibility":"visible"});
+	$('form').remove();
+		$("#signin-slide").css({"width":"0px", "height":"0px"});
+		
+	}
+	)
+	
+	$('.footer').click(function()
+	{
+	$("#home").css({"visibility":"visible"});
+	$('form').remove();
+		$("#signin-slide").css({"width":"0px", "height":"0px"});
+		
+	}
+	)
+	
+	$('.news').click(function()
+	{
+	$("#home").css({"visibility":"visible"});
+	$('form').remove();
+		$("#signin-slide").css({"width":"0px", "height":"0px"});
+		
+	}
+	)
+	
+	$('.others').click(function()
+	{
+	$("#home").css({"visibility":"visible"});
+	$('form').remove();
+		$("#signin-slide").css({"width":"0px", "height":"0px"});
+		
+	}
+	)
+	
+	   }
+    }
+
+	
+	);
+	
+	
+	
+	  
+
+	 
+		
+
+	
+}
+);
+
+
+</script>
+
+</body>
+</html>
